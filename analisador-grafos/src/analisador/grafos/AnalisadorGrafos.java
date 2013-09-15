@@ -24,5 +24,17 @@ public class AnalisadorGrafos {
         System.out.println(DetCaracteristicas.sequenciaGraus(matriz));
         System.out.println(DetCaracteristicas.conjArestas(matriz));
         
+        System.out.println(" ---------- QUESTÃO 4 -----------" );
+        
+        int[][] matriz2 = new int[4][4];
+        
+        matriz2[0][3] = 1;
+        matriz2[1][2] = 1;
+        matriz2[1][3] = 1;
+        matriz2[2][1] = 1;
+        
+        System.out.println(Questao4.QuaisAlunosLideramOGrupo(matriz2));
+        System.out.println(Questao4.QuaisAlunosPossuemAmizadeReciproca(matriz2));
+        System.out.println(Questao4.QuaisAlunosTemProblemaDeRelacionamento(matriz2));
     }
 }

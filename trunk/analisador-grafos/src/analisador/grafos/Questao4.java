@@ -11,7 +11,10 @@ public class Questao4 {
                 soma += matriz[linha][coluna];
             }
             if(soma > somaLider)
+            {
                 lider = coluna;
+                somaLider = soma;
+            }
         }
         return lider;
     }
@@ -22,7 +25,7 @@ public class Questao4 {
         for (int linha = 0; linha < matriz.length; linha++) {
             for (int coluna = linha + 1; coluna < matriz.length; coluna++) {
                 
-                if(matriz[linha][coluna] == 1 && matriz[coluna][linha] == 1)
+                if(matriz[linha][coluna] >= 1 && matriz[coluna][linha] >= 1)
                 {
                     saida += "("+ coluna + " " + linha + ") ";
                 }
@@ -39,7 +42,7 @@ public class Questao4 {
         for (int coluna = 0; coluna < matriz.length; coluna++) {
             boolean temAmigos = false;
             for (int linha = 0; linha < matriz.length; linha++) {
-                if(matriz[linha][coluna] == 1)
+                if(matriz[linha][coluna] >= 1)
                 {
                     temAmigos = true;
                     break;

@@ -26,12 +26,30 @@ public class AnalisadorGrafos {
         
         System.out.println(" ---------- QUESTÃO 4 -----------" );
         
-        int[][] matriz2 = new int[4][4];
+        int[][] matriz2 = new int[13][13];
         
-        matriz2[0][3] = 1;
-        matriz2[1][2] = 1;
-        matriz2[1][3] = 1;
-        matriz2[2][1] = 1;
+        matriz2[0][2] = 1;
+        matriz2[0][6] = 1;
+        matriz2[1][7] = 1;
+        matriz2[2][5] = 1;
+        matriz2[2][7] = 1;
+        matriz2[3][6] = 1;
+        matriz2[3][7] = 1;
+        matriz2[4][7] = 1;
+        matriz2[6][1] = 1;
+        matriz2[7][4] = 1;
+        matriz2[7][12] = 1;
+        matriz2[8][3] = 1;
+        matriz2[8][9] = 1;
+        matriz2[8][11] = 1;
+        matriz2[9][12] = 1;
+        matriz2[10][0] = 2;
+        matriz2[10][7] = 1;
+        matriz2[10][11] = 1;
+        matriz2[11][4] = 1;
+        matriz2[11][10] = 1;
+        matriz2[11][12] = 1;
+        matriz2[12][11] = 1;
         
         System.out.println(Questao4.QuaisAlunosLideramOGrupo(matriz2));
         System.out.println(Questao4.QuaisAlunosPossuemAmizadeReciproca(matriz2));

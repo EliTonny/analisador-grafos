@@ -54,5 +54,26 @@ public class AnalisadorGrafos {
         System.out.println(Questao4.QuaisAlunosLideramOGrupo(matriz2));
         System.out.println(Questao4.QuaisAlunosPossuemAmizadeReciproca(matriz2));
         System.out.println(Questao4.QuaisAlunosTemProblemaDeRelacionamento(matriz2));
+        
+        System.out.println("--------- Questão 5 -----------");
+        int [][] cidades = new int [5][5];
+        int [] caminho = {2,1,4,3};
+        
+        cidades[1][0] = 1;
+        cidades[1][2] = 1;
+        cidades[1][4] = 1;
+        cidades[2][1] = 1;
+        cidades[3][1] = 1;
+        cidades[4][1] = 1;
+        cidades[4][3] = 1;
+        
+        System.out.println(Questao5.chegadasSaidas(cidades, 1));
+        System.out.println(Questao5.cidadeComMaisRuas(cidades));
+        System.out.println(Questao5.todasMaosDuplas(cidades, 0));
+        System.out.println(Questao5.cidadesComSaidaPara(cidades, 1));
+        System.out.println(Questao5.haCidadesIsoladas(cidades));
+        System.out.println(Questao5.haCidadeComEntradaSemSaida(cidades));
+        System.out.println(Questao5.haCidadeComSaidaSemEntrada(cidades));
+        System.out.println(Questao5.caminhoPossivel(cidades, caminho));
     }
 }

@@ -1,5 +1,9 @@
 package analisador.grafos;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
+
 /**
  *
  * @author Eli T. de Souza
@@ -48,6 +52,85 @@ public class DetCaracteristicas {
         return true;
     }
     
+    public static boolean isBipartido(int[][] matriz)
+    {
+        if(matriz.length <= 1)
+            return false;
+        
+        int[] marcaVertices = new int[matriz.length];
+        Stack<Integer> pilha = new Stack<Integer>();
+        Set<Integer> verificados = new HashSet<Integer>();
+        pilha.add(0);
+        
+        while(!pilha.isEmpty())
+        {
+            if(!marcaBipartido(matriz, pilha, marcaVertices, verificados))
+                return false;
+            for(int i = 0; i< marcaVertices.length; i++)
+                if(marcaVertices[i] == 0)
+                    pilha.add(i);
+        }
+        
+        return true;
+    }
+    
+    public static boolean marcaBipartido(int[][] matriz, Stack<Integer> pilha, int[] marcaVertices, Set<Integer> verificados)
+    {
+        while(!pilha.empty())
+        {
+            int coluna = pilha.pop();
+            if(marcaVertices[coluna] == 0)
+                marcaVertices[coluna] = 1;
+            int marcador = 1;
+            if(marcaVertices[coluna] == 1)
+                marcador = 2;
+
+            for (int linha = 0; linha < matriz.length; linha++) {
+                if(matriz[linha][coluna] > 0)
+                {
+                    if(marcaVertices[linha] != 0 && marcaVertices[linha] != marcador)
+                    {
+                        return false;
+                    }
+                    else if(marcaVertices[linha] == 0)
+                    {
+                        marcaVertices[linha] = marcador;
+                    }
+                    
+                    if(!verificados.contains(linha))
+                        pilha.push(linha);
+                }
+            }
+            verificados.add(coluna);
+        }
+        return true;
+    }
+    
+       /* 
+    public static boolean isBipartido(int[][] matriz)
+    {
+        int[] vertices = new int[matriz.length];
+        Stack<Integer> pilha = new Stack<Integer>();
+        for (int coluna = 0; coluna < matriz.length; coluna++) {
+            if(vertices[coluna] == 0)
+                vertices[coluna] = 1;
+            int marcador = 1;
+            if(vertices[coluna] == 1)
+                marcador = 2;
+            
+            for (int linha = 0; linha < matriz.length; linha++) {
+                if(matriz[linha][coluna] > 0)
+                {
+                    if(vertices[linha] != 0 && vertices[linha] != marcador)
+                        return false;
+                    else if(vertices[linha] == 0)
+                        vertices[linha] = marcador;
+                }
+            }
+        }
+        return true;
+    }
+    */
     public static String sequenciaGraus(int matriz[][]){
         int grau = 0;
         int [] listaGraus = new int[matriz.length];

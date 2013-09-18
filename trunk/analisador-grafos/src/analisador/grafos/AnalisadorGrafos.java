@@ -6,9 +6,10 @@ package analisador.grafos;
  */
 public class AnalisadorGrafos {
     public static void main(String[] args) {
-        TestaQuestao3();
-        TestaQuestao4();
-        TestaQuestao5();
+        //TestaQuestao3();
+        //TestaQuestao4();
+        //TestaQuestao5();
+        TestaQuestao6();
     }
     
     private static void TestaQuestao3()
@@ -127,5 +128,77 @@ public class AnalisadorGrafos {
         System.out.println(Questao5.haCidadeComEntradaSemSaida(cidades));
         System.out.println(Questao5.haCidadeComSaidaSemEntrada(cidades));
         System.out.println(Questao5.caminhoPossivel(cidades, caminho));
+    }
+    
+    private static void TestaQuestao6()
+    {
+        int infinito = Integer.MAX_VALUE; // infinito
+
+        int[][] matriz = new int[7][7];
+        matriz[0][0] = 0;
+        matriz[0][1] = infinito;
+        matriz[0][2] = infinito;
+        matriz[0][3] = infinito;
+        matriz[0][4] = infinito;
+        matriz[0][5] = infinito;
+        matriz[0][6] = infinito;
+        //0 I I I I I I
+        
+        matriz[1][0] = infinito;
+        matriz[1][1] = 0;
+        matriz[1][2] = 1;
+        matriz[1][3] = infinito;
+        matriz[1][4] = infinito;
+        matriz[1][5] = infinito;
+        matriz[1][6] = infinito;
+        //I 0 1 I I I I 
+                
+        matriz[2][0] = 4;
+        matriz[2][1] = infinito;
+        matriz[2][2] = 0;
+        matriz[2][3] = infinito;
+        matriz[2][4] = infinito;
+        matriz[2][5] = infinito;
+        matriz[2][6] = infinito;
+        //4 I 0 I I I I 
+                
+        matriz[3][0] = infinito;
+        matriz[3][1] = 3;
+        matriz[3][2] = infinito;
+        matriz[3][3] = 0;
+        matriz[3][4] = 1;
+        matriz[3][5] = infinito;
+        matriz[3][6] = infinito;
+        //I 3 I 0 1 I I 
+                
+        matriz[4][0] = infinito;
+        matriz[4][1] = infinito;
+        matriz[4][2] = 2;
+        matriz[4][3] = infinito;
+        matriz[4][4] = 0;
+        matriz[4][5] = infinito;
+        matriz[4][6] = infinito;
+        //I I 2 I 0 I I
+                
+        matriz[5][0] = infinito;
+        matriz[5][1] = infinito;
+        matriz[5][2] = infinito;
+        matriz[5][3] = 3;
+        matriz[5][4] = infinito;
+        matriz[5][5] = 0;
+        matriz[5][6] = 2;
+        //I I I 3 I 0 2 
+        
+        matriz[6][0] = infinito;
+        matriz[6][1] = infinito;
+        matriz[6][2] = infinito;
+        matriz[6][3] = infinito;
+        matriz[6][4] = 5;
+        matriz[6][5] = infinito;
+        matriz[6][6] = 0;
+        //I I I I 5 I 0
+        
+        //espera-se F, D, E, C, A 
+        System.out.println(new Questao6().menorCaminho(matriz, 5, 0));
     }
 }

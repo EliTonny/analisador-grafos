@@ -1,5 +1,7 @@
 package analisador.grafos;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Eli T. de Souza
@@ -9,7 +11,8 @@ public class AnalisadorGrafos {
         //TestaQuestao3();
         //TestaQuestao4();
         //TestaQuestao5();
-        TestaQuestao6();
+        //TestaQuestao6();
+        TesteQuestao6_1();
     }
     
     private static void TestaQuestao3()
@@ -200,5 +203,34 @@ public class AnalisadorGrafos {
         
         //espera-se F, D, E, C, A 
         System.out.println(new Questao6().menorCaminho(matriz, 5, 0));
+    }
+    
+    private static void TesteQuestao6_1(){
+        Scanner scan = new Scanner(System.in);
+        String valorMatriz;
+        String [] vetor;
+        
+        int tam = Integer.parseInt(scan.nextLine());
+        int [][]matriz = new int[tam][tam];
+        String [] vetor2;
+        
+        String iniFim = scan.nextLine();
+        
+        vetor = iniFim.split(" ");
+        
+        for (int i = 0; i < tam; i++) {
+            valorMatriz = scan.nextLine();
+            vetor2 = valorMatriz.split(" ");
+            
+            for (int j = 0; j < vetor2.length; j++) {
+                if(vetor2[j].equals("I")){
+                    matriz[i][j] = Integer.MAX_VALUE;
+                } else{
+                    matriz[i][j] = Integer.parseInt(vetor2[j]);
+                }
+            }
+        }
+        
+        System.out.println(new Questao6().menorCaminho(matriz, vetor[0].charAt(0) - 65, vetor[1].charAt(0) - 65));
     }
 }

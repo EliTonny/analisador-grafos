@@ -32,7 +32,7 @@ public class Questao6 {
             this.processado = verificado;
         }
     }
-
+    
     private int retornaMenor(Vertice[] vertices) {
         int menor = 0;
         for (int i = 1; i < vertices.length; i++) {
@@ -58,7 +58,7 @@ public class Questao6 {
         Vertice[] vertices = new Vertice[grafo.length];
         for (int i = 0; i < vertices.length; i++) {
             vertices[i] = new Vertice();
-            vertices[i].custo = 999999;
+            vertices[i].custo = Integer.MAX_VALUE;
             vertices[i].pai = -1;
         }
         vertices[inicio].custo = 0;
@@ -74,9 +74,10 @@ public class Questao6 {
             }
         }
         
-        String saida = imprime(fim, vertices);
+        String saida = "Caminho mínimo: " + imprime(fim, vertices);
         if(saida.length() > 0)
-            saida = saida.substring(0, saida.length() - 2 );
+            saida = saida.substring(0, saida.length() - 4 );
+        saida += "\nCusto: " + vertices[fim].custo;
         return saida;
     }
     
@@ -85,7 +86,7 @@ public class Questao6 {
     {
         if(u < 0)
             return "";
-        return u + ", " + imprime(vertices[u].pai, vertices);
+        return imprime(vertices[u].pai, vertices) + (char) (u + 65) + " -> ";
     }
 
     private void Relax(int u, int v, int w, Vertice[] vertices) {

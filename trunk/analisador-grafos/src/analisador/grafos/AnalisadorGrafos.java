@@ -1,5 +1,9 @@
 package analisador.grafos;
 
+import analisadorgrafos.model.Grafo;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AnalisadorGrafos {
 
     public static void main(String[] args) {
@@ -7,7 +11,9 @@ public class AnalisadorGrafos {
         //TestaQuestao4();
         //TestaQuestao5();
         //TestaQuestao6();
-        TesteQuestao6_1();
+        //TesteQuestao6_1();
+        //TestaQuestao7();
+        TestaQuestao7_1();
     }
 
     private static void TestaQuestao3() {
@@ -128,7 +134,7 @@ public class AnalisadorGrafos {
     }
 
     private static void TestaQuestao6() {
-        System.out.println("--------- Questão 6 Teste -------");
+        System.out.println("--------- Questão 6 Automatico -------");
 
         int[][] matriz = new int[7][7];
         matriz[0][0] = 0;
@@ -199,7 +205,56 @@ public class AnalisadorGrafos {
     }
 
     private static void TesteQuestao6_1() {
-        System.out.println("--------- Questão 6 -----------");
+        System.out.println("--------- Questão 6 Manual -------");
         new Questao6().menorCaminho();
+    }
+
+    private static void TestaQuestao7() {
+        System.out.println("--------- Questão 7 Automatico ------");
+        Questao7.Verifica();
+    }
+    
+    private static void TestaQuestao7_1() {
+        System.out.println("--------- Questão 7 Manual ------");
+        
+        ArrayList<int[][]> grafos = new ArrayList<int[][]>();
+        
+        int[][] grafo = new int[3][3];
+        grafo[0][1] = 1;
+        grafo[2][1] = 1;
+        grafo[0][2] = 1;
+        grafo[1][2] = 1;  
+        
+        grafos.add(grafo);
+        
+        grafo = new int[3][3];
+        grafo[1][2] = 1;
+        grafo[2][1] = 1;
+        grafo[0][1] = 1;
+        grafo[2][0] = 1;
+        
+        grafos.add(grafo);
+        
+        Questao7.ExecutaVerificacao(grafos);
+        /*  entrada:
+            3 4
+            1 2
+            3 2
+            1 3
+            2 3
+            3 4
+            2 3
+            3 2
+            1 2
+            3 1
+            0 0
+        */
+        
+        /*  saida:
+            Teste 1
+            N
+            Teste 2
+            S
+         */
     }
 }

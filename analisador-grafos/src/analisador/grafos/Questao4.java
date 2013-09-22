@@ -1,5 +1,10 @@
 package analisador.grafos;
 
+/**
+ *
+ * @author Eli T. de Souza
+ * @author Gustavo Sabel
+ */
 public class Questao4 {
 
     public static int QuaisAlunosLideramOGrupo(int[][] matriz) {

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ *
+ * @author Eli T. de Souza
+ * @author Gustavo Sabel
+ */
 public class Questao7 {
 
     public static void Verifica() {
@@ -60,16 +65,20 @@ public class Questao7 {
     }
 
     public static void ExecutaVerificacao(List<int[][]> grafos) {
+        int cont = 0;
         for (int[][] grafo : grafos) {
-            System.out.println("Grafo:");
+            cont++;
+            Grafo grafoTeste = new Grafo(grafo.length);
             for (int i = 0; i < grafo.length; i++) {
                 for (int j = 0; j < grafo.length; j++) {
-                    System.out.print(grafo[i][j] + " ");
+                    if(grafo[i][j] > 0)
+                        grafoTeste.insereAresta(i, j, 1);
                 }
-                System.out.println();
             }
+            BuscaEmProfundidade busca = new BuscaEmProfundidade(grafoTeste);
+            busca.buscaEmProfundidade();
+            busca.conexo(cont);
         }
-        System.out.println("Fim");
     }
 
     public static int[] traduzEntrada(String entrada) {

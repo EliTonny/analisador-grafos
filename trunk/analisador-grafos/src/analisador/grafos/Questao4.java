@@ -7,7 +7,12 @@ package analisador.grafos;
  */
 public class Questao4 {
 
-    public static int QuaisAlunosLideramOGrupo(int[][] matriz) {
+    private static char toLetra(int num)
+    {
+        return (char)(num+65);
+    }
+    
+    public static char QuaisAlunosLideramOGrupo(int[][] matriz) {
         int lider = -1;
         int somaLider = -1;
         for (int coluna = 0; coluna < matriz.length; coluna++) {
@@ -21,7 +26,7 @@ public class Questao4 {
                 somaLider = soma;
             }
         }
-        return lider;
+        return toLetra(lider);
     }
 
     public static String QuaisAlunosPossuemAmizadeReciproca(int[][] matriz) {
@@ -32,7 +37,7 @@ public class Questao4 {
                 
                 if(matriz[linha][coluna] >= 1 && matriz[coluna][linha] >= 1)
                 {
-                    saida += "("+ coluna + " " + linha + ") ";
+                    saida += "("+ toLetra(coluna) + " " + toLetra(linha) + ") ";
                 }
                 
             }
@@ -55,7 +60,7 @@ public class Questao4 {
                 
             }
             if(!temAmigos)
-                saida += coluna + ", ";
+                saida += toLetra(coluna) + ", ";
         }
         if(saida.length() > 0)
             saida = saida.substring(0, saida.length() -2);

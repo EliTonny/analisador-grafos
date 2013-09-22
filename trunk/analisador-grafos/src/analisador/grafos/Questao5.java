@@ -1,12 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package analisador.grafos;
 
 /**
  *
  * @author Eli T. de Souza
+ * @author Gustavo Sabel
  */
 public class Questao5 {
     

@@ -7,10 +7,11 @@ import java.util.Stack;
 /**
  *
  * @author Eli T. de Souza
+ * @author Gustavo Sabel
  */
-public class DetCaracteristicas {
+public class Questao3 {
     
-    private DetCaracteristicas(){
+    private Questao3(){
     }
     
     public static boolean isNulo(int matriz [][]){
@@ -144,7 +145,7 @@ public class DetCaracteristicas {
             retorno += "Vértice: " + Integer.toString(i) + " Grau: " + Integer.toString(grau) + "\n";
             listaGraus[i] = grau;
         }
-        listaGraus = DetCaracteristicas.bubbleSort(listaGraus);
+        listaGraus = Questao3.bubbleSort(listaGraus);
         retorno += "Sequência de Graus: ";
         for (int i = 0; i < listaGraus.length; i++) {
             retorno += Integer.toString(listaGraus[i]) + " ";

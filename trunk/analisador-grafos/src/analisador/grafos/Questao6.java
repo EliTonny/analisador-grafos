@@ -2,6 +2,11 @@ package analisador.grafos;
 
 import java.util.Scanner;
 
+/**
+ *
+ * @author Eli T. de Souza
+ * @author Gustavo Sabel
+ */
 public class Questao6 {
 
     public static final int Infinito = Integer.MAX_VALUE;

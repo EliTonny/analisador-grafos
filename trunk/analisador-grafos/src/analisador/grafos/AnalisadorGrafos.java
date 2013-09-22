@@ -1,9 +1,12 @@
 package analisador.grafos;
 
-import analisadorgrafos.model.Grafo;
 import java.util.ArrayList;
-import java.util.Scanner;
 
+/**
+ *
+ * @author Eli T. de Souza
+ * @author Gustavo Sabel
+ */
 public class AnalisadorGrafos {
 
     public static void main(String[] args) {
@@ -11,9 +14,9 @@ public class AnalisadorGrafos {
         //TestaQuestao4();
         //TestaQuestao5();
         //TestaQuestao6();
-        //TesteQuestao6_1();
+        TesteQuestao6_1();
         //TestaQuestao7();
-        TestaQuestao7_1();
+        //TestaQuestao7_1();
     }
 
     private static void TestaQuestao3() {
@@ -31,11 +34,11 @@ public class AnalisadorGrafos {
         matriz[4][3] = 0;
         matriz[3][4] = 0;
 
-        System.out.println(DetCaracteristicas.isNulo(matriz));
-        System.out.println(DetCaracteristicas.isRegular(matriz));
-        System.out.println(DetCaracteristicas.isCompleto(matriz));
-        System.out.println(DetCaracteristicas.sequenciaGraus(matriz));
-        System.out.println(DetCaracteristicas.conjArestas(matriz));
+        System.out.println(Questao3.isNulo(matriz));
+        System.out.println(Questao3.isRegular(matriz));
+        System.out.println(Questao3.isCompleto(matriz));
+        System.out.println(Questao3.sequenciaGraus(matriz));
+        System.out.println(Questao3.conjArestas(matriz));
 
         int[][] matriz2 = new int[5][5];
 
@@ -50,7 +53,7 @@ public class AnalisadorGrafos {
         matriz2[4][2] = 1;
         matriz2[4][3] = 1;
         System.out.print("1É bipartido?");
-        System.out.println(DetCaracteristicas.isBipartido(matriz));
+        System.out.println(Questao3.isBipartido(matriz));
 
         int[][] matriz21 = new int[5][5];
         matriz21[0][1] = 1;
@@ -64,7 +67,7 @@ public class AnalisadorGrafos {
         //matriz21[4][2] = 1;
         matriz21[4][3] = 1;
         System.out.print("2É bipartido?");
-        System.out.println(DetCaracteristicas.isBipartido(matriz21));
+        System.out.println(Questao3.isBipartido(matriz21));
 
         int[][] matriz22 = new int[5][5];
         matriz22[0][1] = 1;
@@ -74,7 +77,7 @@ public class AnalisadorGrafos {
         matriz22[3][4] = 1;
         matriz22[4][2] = 1;
         System.out.print("3É bipartido?");
-        System.out.println(DetCaracteristicas.isBipartido(matriz22));
+        System.out.println(Questao3.isBipartido(matriz22));
     }
 
     private static void TestaQuestao4() {

@@ -10,13 +10,13 @@ import java.util.ArrayList;
 public class AnalisadorGrafos {
 
     public static void main(String[] args) {
-        //TestaQuestao3();
-        //TestaQuestao4();
-        //TestaQuestao5();
-        //TestaQuestao6();
-        TesteQuestao6_1();
+        TestaQuestao3();
+        TestaQuestao4();
+        TestaQuestao5();
+        TestaQuestao6();
+        //TesteQuestao6_1();
         //TestaQuestao7();
-        //TestaQuestao7_1();
+        TestaQuestao7_1();
     }
 
     private static void TestaQuestao3() {
@@ -213,12 +213,12 @@ public class AnalisadorGrafos {
     }
 
     private static void TestaQuestao7() {
-        System.out.println("--------- Questão 7 Automatico ------");
+        System.out.println("--------- Questão 7 Manual ------");
         Questao7.Verifica();
     }
     
     private static void TestaQuestao7_1() {
-        System.out.println("--------- Questão 7 Manual ------");
+        System.out.println("--------- Questão 7 Automatico ------");
         
         ArrayList<int[][]> grafos = new ArrayList<int[][]>();
         
